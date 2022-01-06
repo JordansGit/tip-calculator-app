@@ -5,40 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
+
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Bill
+  <div class="container">
+    <section>
+      <p>Bill</p>
+      <input type="number">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <p>Select Tip %</p>
+      <div class="tip-button">
+        <h1>5%</h1>
+        <h1>10%</h1>
+        <h1>15%</h1>
+        <h1>25%</h1>
+        <h1>50%</h1>
+        <h1>Custom</h1>
+      </div>
 
-  Number of People
+      <p>Number of People</p>
+      <input type="number">
+    </section>
 
-  Tip Amount
-  / person
+    <section>
+      <p>Tip Amount</p>
+      <p class="small">/ person</p>
+      <p class="tip-amount"></p>
 
-  Total
-  / person
+      <p>Total</p>
+      <p class="small">/ person</p>
+      <p class="total-amount"></p>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <button>Reset</button>
+    </section>
   </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
