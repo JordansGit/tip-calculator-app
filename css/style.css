@@ -1,0 +1,191 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+
+}
+
+img {
+  margin-top: -100px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  
+}
+
+.container {
+  margin-top: 70px;
+  display: flex;
+  border-radius: 25px;
+  padding: 40px;
+  column-gap: 40px;
+}
+
+section {
+  width: 370px;
+  height: 370px;
+  border-radius: 15px;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+h1, p {
+  margin: 0;
+  font-weight: 400;
+
+}
+
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 10px 20px;
+  border: none;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.bill-input {
+  background: hsl(189, 41%, 95%) url("../images/icon-dollar.svg") no-repeat left;
+  background-origin: content-box;
+}
+
+.people-input {
+  background: hsl(189, 41%, 95%) url("../images/icon-person.svg") no-repeat left; 
+  background-origin: content-box;
+}
+
+
+input[type="number"], h1 {
+  font-size: 24px;
+}
+
+.left-side > p {
+  margin-bottom: 5px;
+}
+
+.left-side > p:not(:first-child) {
+  margin-top: 35px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+
+button, h1, input[type="number"] {
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  color: hsl(183, 100%, 15%); 
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+/* COLOURS */ 
+.tip-button-preset, .right-side {
+  background: hsl(183, 100%, 15%); 
+}
+
+body {
+  background: hsl(185, 41%, 84%); 
+}
+
+.container {
+  background: hsl(0, 0%, 100%); 
+}
+
+.reset {
+  background: hsl(186, 14%, 43%);
+}
+
+.tip-button-preset, .right-side > p {
+  color: hsl(189, 41%, 97%);
+}
+
+.custom-button {
+  background: hsl(189, 41%, 95%);
+}
+
+::placeholder {
+  color: hsl(184, 14%, 56%); 
+}
+
+p {
+  color: hsl(186, 14%, 43%); 
+  font-weight: 700; 
+}
+
+.right-side > p.small {
+  color: hsl(186, 14%, 43%); 
+  font-size: 13px;
+}
+
+/* 
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%) // text of numbers in tip amount. 
+
+### Neutral
+
+
+- Dark grayish cyan:  // reset button maybe, idk, could be a text color aswell. 
+- Dark grayish cyan: hsl(184, 14%, 56%) ??? 
+- Light grayish cyan: hsl(189, 41%, 97%) // the form fields of: bill input, no. of ppl input, custom button
+
+- Very dark cyan:  // dark buttons 
+- Light grayish cyan:  // body color 
+- White: container color 
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%) -> change lightness to 95%. 
+- White: hsl(0, 0%, 100%)
+
+*/ 
+/*
+.one {
+  background: hsl(183, 100%, 15%); 
+}
+.two {
+  background: hsl(186, 14%, 43%); 
+}
+.three {
+  background: hsl(184, 14%, 56%); 
+}
+.four {
+  background: hsl(185, 41%, 84%); 
+}
+.five {
+  background: hsl(189, 41%, 97%); 
+}
+*/

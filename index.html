@@ -7,31 +7,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
   <title>Frontend Mentor | Tip calculator app</title>
 
 </head>
 <body>
-
+  <img src="images/logo.svg">
   <div class="container">
-    <section>
+    <section class="left-side">
       <p>Bill</p>
-      <input type="number">
+      <input class="bill-input" type="number" placeholder="0">
 
       <p>Select Tip %</p>
-      <div class="tip-button">
-        <h1>5%</h1>
-        <h1>10%</h1>
-        <h1>15%</h1>
-        <h1>25%</h1>
-        <h1>50%</h1>
-        <h1>Custom</h1>
+      <div class="tip-buttons">
+        <h1 class="tip-button-preset one">5%</h1>
+        <h1 class="tip-button-preset two">10%</h1>
+        <h1 class="tip-button-preset three">15%</h1>
+        <h1 class="tip-button-preset four">25%</h1>
+        <h1 class="tip-button-preset five">50%</h1>
+        <h1 class="custom-button">Custom</h1>
       </div>
 
       <p>Number of People</p>
-      <input type="number">
+      <input class="people-input" type="number" placeholder="0">
     </section>
 
-    <section>
+    <section class="right-side">
       <p>Tip Amount</p>
       <p class="small">/ person</p>
       <p class="tip-amount"></p>
@@ -40,7 +45,7 @@
       <p class="small">/ person</p>
       <p class="total-amount"></p>
 
-      <button>Reset</button>
+      <button class="reset">Reset</button>
     </section>
   </div>
 
