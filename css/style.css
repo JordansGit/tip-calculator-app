@@ -18,6 +18,12 @@ body {
   
 }
 
+input[type="number"] {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%); 
+}
+
 .container {
   margin-top: 70px;
   display: flex;
@@ -100,12 +106,34 @@ button, h1, input[type="number"] {
   border-radius: 5px;
 }
 
-button {
+.reset {
   width: 100%;
-  color: hsl(183, 100%, 15%); 
+  color: hsl(183, 100%, 15%); /* hsl(186, 14%, 43%)*/ 
   border: none;
   font-weight: 700;
   text-transform: uppercase;
+  height: 50px;
+  font-size: 16px;
+  grid-column: 1 / 3;
+  align-self: end;
+}
+
+.right-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30px; 
+  grid-template-rows: 60px 60px auto;
+}
+
+.tip-amount, .total-amount {
+  align-self: center; 
+  justify-self: end;
+  font-size:  45px;
+  color: hsl(172, 67%, 45%) !important; 
+}
+
+.right-side-text {
+  align-self: center;
 }
 
 
@@ -123,10 +151,10 @@ body {
 }
 
 .reset {
-  background: hsl(186, 14%, 43%);
+  background: hsl(183, 100%, 21%);
 }
 
-.tip-button-preset, .right-side > p {
+.tip-button-preset, .right-side p {
   color: hsl(189, 41%, 97%);
 }
 
@@ -138,15 +166,39 @@ body {
   color: hsl(184, 14%, 56%); 
 }
 
-p {
+p, .custom-button {
   color: hsl(186, 14%, 43%); 
   font-weight: 700; 
 }
 
-.right-side > p.small {
+.right-side p.small {
   color: hsl(186, 14%, 43%); 
   font-size: 13px;
 }
+
+.right-side {
+  width: 290px;
+  height: 290px;
+  padding: 40px;
+
+}
+/*
+.right-side p:first-child {
+  margin-top: 10px;
+}*/
+
+h1:active {
+  background: hsl(172, 67%, 45%); 
+}
+
+h1:hover, .reset:hover {
+  cursor: pointer;
+}
+
+.reset:active {
+  background: hsl(185, 41%, 84%);  /*hsl(186, 14%, 43%); */
+}
+
 
 /* 
 ### Primary
