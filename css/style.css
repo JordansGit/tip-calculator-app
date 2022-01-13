@@ -1,12 +1,8 @@
+/* || General Styles */ 
 html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-
-}
-
-img {
-  margin-top: -100px;
 }
 
 body {
@@ -15,15 +11,31 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Space Mono', monospace;
-  
 }
 
-input[type="number"] {
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  color: hsl(183, 100%, 15%); 
+img {
+  margin-top: -100px;
 }
 
+h1, p {
+  margin: 0;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+p, .custom-button, input[type="number"] {  
+  font-weight: 700; /* changes everything except h1 tag */
+}
+
+button, h1, input[type="number"] {
+  border-radius: 5px;
+}
+
+
+
+/* || Container */ 
 .container {
   margin-top: 70px;
   display: flex;
@@ -38,38 +50,20 @@ section {
   border-radius: 15px;
 }
 
-.tip-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
-  margin-top: 10px;
-}
 
-h1, p {
-  margin: 0;
-  font-weight: 400;
 
+/* || Left Side */ 
+input[type="number"], h1 {
+  font-size: 24px;
 }
 
 input[type="number"] {
+  font-family: 'Space Mono', monospace;
   width: 100%;
   box-sizing: border-box;
   text-align: right;
   padding: 10px 20px;
   border: none;
-
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 .bill-input {
@@ -82,16 +76,18 @@ input[type=number] {
   background-origin: content-box;
 }
 
-
-input[type="number"], h1 {
-  font-size: 24px;
+.tip-buttons-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.left-side > p {
+.left-side p {
   margin-bottom: 5px;
 }
 
-.left-side > p:not(:first-child) {
+.left-side p:not(:first-child) {
   margin-top: 35px;
 }
 
@@ -102,13 +98,31 @@ h1 {
   height: 45px;
 }
 
-button, h1, input[type="number"] {
-  border-radius: 5px;
+/* hide arrows on number input -> all browsers */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /*  */ 
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield; 
+}
+
+
+
+/* || Right Side */ 
+.right-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30px; 
+  grid-template-rows: 60px 60px auto;
+  width: 290px;
+  height: 290px;
+  padding: 40px;
 }
 
 .reset {
   width: 100%;
-  color: hsl(183, 100%, 15%); /* hsl(186, 14%, 43%)*/ 
   border: none;
   font-weight: 700;
   text-transform: uppercase;
@@ -118,75 +132,22 @@ button, h1, input[type="number"] {
   align-self: end;
 }
 
-.right-side {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 30px; 
-  grid-template-rows: 60px 60px auto;
+.tip-amount, .total-amount, .right-side-text {
+  align-self: center; 
 }
 
 .tip-amount, .total-amount {
-  align-self: center; 
   justify-self: end;
   font-size:  45px;
-  color: hsl(172, 67%, 45%) !important; 
 }
 
-.right-side-text {
-  align-self: center;
-}
-
-
-/* COLOURS */ 
-.tip-button-preset, .right-side {
-  background: hsl(183, 100%, 15%); 
-}
-
-body {
-  background: hsl(185, 41%, 84%); 
-}
-
-.container {
-  background: hsl(0, 0%, 100%); 
-}
-
-.reset {
-  background: hsl(183, 100%, 21%);
-}
-
-.tip-button-preset, .right-side p {
-  color: hsl(189, 41%, 97%);
-}
-
-.custom-button {
-  background: hsl(189, 41%, 95%);
-}
-
-::placeholder {
-  color: hsl(184, 14%, 56%); 
-}
-
-p, .custom-button {
-  color: hsl(186, 14%, 43%); 
-  font-weight: 700; 
-}
-
-.right-side p.small {
-  color: hsl(186, 14%, 43%); 
+.small {
   font-size: 13px;
 }
 
-.right-side {
-  width: 290px;
-  height: 290px;
-  padding: 40px;
 
-}
-/*
-.right-side p:first-child {
-  margin-top: 10px;
-}*/
 
+/* CSS Selectors */ 
 h1:active {
   background: hsl(172, 67%, 45%); 
 }
@@ -198,6 +159,56 @@ h1:hover, .reset:hover {
 .reset:active {
   background: hsl(185, 41%, 84%);  /*hsl(186, 14%, 43%); */
 }
+
+
+
+/* COLOURS */ 
+body {
+  background: hsl(185, 41%, 84%); 
+}
+
+.container {
+  background: hsl(0, 0%, 100%); 
+}
+
+.tip-button, .right-side {
+  background: hsl(183, 100%, 15%); 
+}
+
+.custom-button {
+  background: hsl(189, 41%, 95%);
+}
+
+.reset {
+  background: hsl(183, 100%, 21%);
+  color: hsl(183, 100%, 15%); 
+}
+
+.left-side p, .custom-button, .small {
+  color: hsl(186, 14%, 43%); 
+}
+
+::placeholder {
+  color: hsl(184, 14%, 56%); 
+}
+
+input[type="number"] {
+  color: hsl(183, 100%, 15%); 
+}
+
+.tip-button, .white-text { 
+  color: hsl(189, 41%, 97%);
+}
+
+.tip-amount, .total-amount {
+  color: hsl(172, 67%, 45%);
+}
+
+
+
+
+
+
 
 
 /* 
