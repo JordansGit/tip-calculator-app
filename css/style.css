@@ -168,20 +168,21 @@ button {
 
 .active {
   background: hsl(172, 67%, 45%) !important;
+  color: hsl(183, 100%, 15%) !important;
 }
 
-/* CSS Selectors */ 
+/* CSS Selectors */ /*
 .tip:active {
   background: hsl(172, 67%, 45%); 
-}
+}*/
 
 .tip:hover, .reset-button:hover {
   cursor: pointer;
 }
-
+/*
 .reset-button:active {
-  background: hsl(185, 41%, 84%);  /*hsl(186, 14%, 43%); */
-}
+  background: hsl(185, 41%, 84%);  /*hsl(186, 14%, 43%); 
+}*/
 
 .bill-input:focus, .custom-button:focus {
   outline: 2px solid hsl(172,30%, 50%);
@@ -191,7 +192,15 @@ button {
   outline: 2px solid hsl(11, 53%, 69%); 
 }
 
+button:hover {
+  background: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
 
+button:active {
+  background: hsl(172, 67%, 45%); 
+  color: hsl(183, 100%, 15%);
+}
 
 
 /* COLOURS */ 
@@ -238,49 +247,60 @@ body {
 
 
 
-
-
-
-
-
-/* 
-### Primary
-
-- Strong cyan: hsl(172, 67%, 45%) // text of numbers in tip amount. 
-
-### Neutral
-
-
-- Dark grayish cyan:  // reset button maybe, idk, could be a text color aswell. 
-- Dark grayish cyan: hsl(184, 14%, 56%) ??? 
-- Light grayish cyan: hsl(189, 41%, 97%) // the form fields of: bill input, no. of ppl input, custom button
-
-- Very dark cyan:  // dark buttons 
-- Light grayish cyan:  // body color 
-- White: container color 
-
-- Very dark cyan: hsl(183, 100%, 15%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Dark grayish cyan: hsl(184, 14%, 56%)
-- Light grayish cyan: hsl(185, 41%, 84%)
-- Light grayish cyan: hsl(189, 41%, 97%) -> change lightness to 95%. 
-- White: hsl(0, 0%, 100%)
-
-*/ 
-/*
-#fivePct {
-  background: hsl(183, 100%, 15%); 
+/* MEDIA QUERIES */ 
+@media only screen and (max-width: 860px) {
+  .tip-buttons-group {
+    grid-template-columns: 1fr 1fr;
+  }
+  section {
+    height: auto;
+    width: auto;
+  }
+  .right-side {
+    height: auto;
+    width: 83%;
+  }
+  .tip-amount, .total-amount {
+    font-size: 30px;
+  }
 }
-#tenPct {
-  background: hsl(186, 14%, 43%); 
+
+@media only screen and (max-width: 620px) {
+  .tip-buttons-group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  img {
+    margin-top: 35px;
+  }
+  .container {
+    flex-direction: column;
+    width: calc(100% - 60px); /* 70px padding left and right*/ 
+    padding: 40px 30px;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .right-side {
+    width: auto;
+    padding: 30px 20px 20px 20px;
+    row-gap: 0;
+  }
+  .right-side button {
+    margin-top: 20px;
+  }
+  .tip-amount, .total-amount {
+    font-size: 30px;
+  }
+  .white-text {
+    font-size: 15px;
+  }
 }
-#fifteenPct {
-  background: hsl(184, 14%, 56%); 
+
+@media only screen and (max-width: 420px) {
+  html, body {
+    height: auto;
+    width: auto;
+  }
+  .tip-buttons-group {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-#twentyFivePct {
-  background: hsl(185, 41%, 84%); 
-}
-#fiftyPct {
-  background: hsl(189, 41%, 97%); 
-}
-*/

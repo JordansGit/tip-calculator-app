@@ -10,8 +10,9 @@ let totalAmount = document.querySelector(".total-amount");
 let tipBtnGrp = document.querySelectorAll(".tip"); 
 
 
-let tip; // somehow get the tip value if either 1 of the 5-50% btns are pressed or a custom percent is inputted, and put it into this var. 
+let tip = 0;  
 
+// get the tip value;
 for (var i = 0; i < tipBtnGrp.length; i++) {
   tipBtnGrp[i].addEventListener('click', function(e) {
     tip = Number(e.target.value); 
@@ -25,26 +26,26 @@ for (var i = 0; i < tipBtnGrp.length; i++) {
     if (this.type === 'submit') {
       this.className += " active";
     }
-    console.log(tip);
+    console.log("tip: " + tip);
   })
+  tipBtnGrp[i].addEventListener('click', calculate);
 }
-
-
-let billInputVal;
-let customPctVal;
-let peopleInputVal;
-
-// get bill input value. 
-billInput.addEventListener('keyup', function(e) {
-  billInputVal = e.target.value;
-  console.log(billInputVal);
-})
 
 // get custom percent value. 
 customPct.addEventListener('keyup', function(e) {
-  customPctVal = e.target.value;
-  console.log(customPctVal);
+  tip = Number(e.target.value);
+  console.log("tip: " + tip);
 })
+
+let billInputVal;
+let peopleInputVal;
+
+// get bill input value. 
+billInput.addEventListener('keydown', function(e) {
+  billInputVal = e.target.value;
+})
+
+
 
 // get no. of ppl input value
 peopleInput.addEventListener('keyup', function(e) {
@@ -64,19 +65,28 @@ peopleInput.addEventListener('keyup', function(e) {
 /* function to update cost */ 
 let tipPP;
 let totalPP;
-window.onload = function(){
-  // your code here
-  if ((billInput.value == true) && (peopleInput.value == true)) {
-    tipPP = ((Number(billInput.value)) / Number(peopleInput.value) * (tip / 100)).toFixed(2);  
-    totalPP = ((Number(billInput.value)) / Number(peopleInput.value) + Number(tipPP)).toFixed(2);
-  
-    tipAmount.innerText = '$' + tipPP; 
-    totalAmount.innerText = '$' + totalPP; 
+function calculate() {
+  if ((billInput.value != '' || billInput.value != 0) && (peopleInput.value != '' || peopleInput.value != 0)) {
+    tipPP = (Number(billInput.value)) / Number(peopleInput.value) * (tip / 100);  
+    totalPP = (Number(billInput.value)) / Number(peopleInput.value) + Number(tipPP);
+
+    tipAmount.innerText = '$' + tipPP.toFixed(2); 
+    totalAmount.innerText = '$' + totalPP.toFixed(2); 
+
+    // if number of people = 0, just leave result as 0.00 instead of it showing NaN. 
+    if (isNaN(tipPP) || tipPP === Infinity) {
+      tipAmount.innerText = '$0.00'; 
+      totalAmount.innerText = '$0.00'; 
+    }
+    resetButton.classList.add('active'); 
   }
   
-};
+}
 
-
+// run function when the 3 input fields are triggered. 
+customPct.addEventListener('keyup', calculate); // input might be the wrong 
+billInput.addEventListener('keyup', calculate); 
+peopleInput.addEventListener('keyup', calculate);
 
 
 // reset button 
@@ -84,6 +94,9 @@ resetButton.addEventListener('click', function() {
   billInput.value = ''; 
   customPct.value = '';
   peopleInput.value = '';
+  tipAmount.innerText = '$0.00'; 
+  totalAmount.innerText = '$0.00'; 
+  this.classList.remove('active')
 })
 
 
