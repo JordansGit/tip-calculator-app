@@ -5,31 +5,34 @@ html, body {
   width: 100%;
 }
 
+* {
+  font-family: 'Space Mono', monospace;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Space Mono', monospace;
 }
 
 img {
   margin-top: -100px;
 }
 
-h1, p {
+.tip, p {
   margin: 0;
 }
 
-h1 {
+.tip {
   font-weight: 400;
 }
 
-p, .custom-button, input[type="number"] {  
-  font-weight: 700; /* changes everything except h1 tag */
+p, .custom-button, .input {  
+  font-weight: 700; /* changes everything except .tip tag */
 }
 
-button, h1, input[type="number"] {
+.tip, .input, .reset-button {
   border-radius: 5px;
 }
 
@@ -53,11 +56,11 @@ section {
 
 
 /* || Left Side */ 
-input[type="number"], h1 {
+.input, .tip {
   font-size: 24px;
 }
 
-input[type="number"] {
+.input {
   font-family: 'Space Mono', monospace;
   width: 100%;
   box-sizing: border-box;
@@ -91,7 +94,7 @@ input[type="number"] {
   margin-top: 35px;
 }
 
-h1 {
+.tip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,6 +111,15 @@ input[type=number] {
   -moz-appearance: textfield; 
 }
 
+button {
+  border: none;
+}
+
+.custom-button {
+  padding: 0;
+  text-align: center;
+}
+
 
 
 /* || Right Side */ 
@@ -121,7 +133,7 @@ input[type=number] {
   padding: 40px;
 }
 
-.reset {
+.reset-button {
   width: 100%;
   border: none;
   font-weight: 700;
@@ -141,24 +153,44 @@ input[type=number] {
   font-size:  45px;
 }
 
-.small {
+.small-text {
   font-size: 13px;
 }
 
+.left {
+  float: left;
+}
+.right {
+  float: right;
+  color: hsl(11, 53%, 69%) !important; 
+  display: none;
+}
 
+.active {
+  background: hsl(172, 67%, 45%) !important;
+}
 
 /* CSS Selectors */ 
-h1:active {
+.tip:active {
   background: hsl(172, 67%, 45%); 
 }
 
-h1:hover, .reset:hover {
+.tip:hover, .reset-button:hover {
   cursor: pointer;
 }
 
-.reset:active {
+.reset-button:active {
   background: hsl(185, 41%, 84%);  /*hsl(186, 14%, 43%); */
 }
+
+.bill-input:focus, .custom-button:focus {
+  outline: 2px solid hsl(172,30%, 50%);
+}
+
+.people-input:focus {
+  outline: 2px solid hsl(11, 53%, 69%); 
+}
+
 
 
 
@@ -179,12 +211,12 @@ body {
   background: hsl(189, 41%, 95%);
 }
 
-.reset {
+.reset-button {
   background: hsl(183, 100%, 21%);
   color: hsl(183, 100%, 15%); 
 }
 
-.left-side p, .custom-button, .small {
+.left-side p, .custom-button, .small-text {
   color: hsl(186, 14%, 43%); 
 }
 
@@ -192,7 +224,7 @@ body {
   color: hsl(184, 14%, 56%); 
 }
 
-input[type="number"] {
+.input {
   color: hsl(183, 100%, 15%); 
 }
 
@@ -236,19 +268,19 @@ input[type="number"] {
 
 */ 
 /*
-.one {
+#fivePct {
   background: hsl(183, 100%, 15%); 
 }
-.two {
+#tenPct {
   background: hsl(186, 14%, 43%); 
 }
-.three {
+#fifteenPct {
   background: hsl(184, 14%, 56%); 
 }
-.four {
+#twentyFivePct {
   background: hsl(185, 41%, 84%); 
 }
-.five {
+#fiftyPct {
   background: hsl(189, 41%, 97%); 
 }
 */
